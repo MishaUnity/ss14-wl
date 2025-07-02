@@ -24,10 +24,16 @@
     - map: [ "enum.HumanoidVisualLayers.LLeg" ]
     - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
     - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
-    - map: ["jumpsuit"]
+    # WL-Changes-Under-start: Litogin
+    # - map: ["jumpsuit"]
+    - map: [ "socks" ]
+    - map: [ "underwear" ]
+    - map: [ "undershirts"]
+    # WL-Changes-Under-end: Litogin
     - map: ["enum.HumanoidVisualLayers.LFoot"]
     - map: ["enum.HumanoidVisualLayers.RFoot"]
-    - map: [ "enum.HumanoidVisualLayers.Foots" ] # WL-Underwear
+    # - map: [ "enum.HumanoidVisualLayers.Foots" ] # WL-Underwear
+    - map: ["jumpsuit"] # WL-Workers-Under: Litogin
     - map: ["enum.HumanoidVisualLayers.LHand"]
     - map: ["enum.HumanoidVisualLayers.RHand"]
     - map: [ "gloves" ]

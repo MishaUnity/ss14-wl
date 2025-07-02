@@ -47,6 +47,11 @@ public sealed class ClientClothingSystem : ClothingSystem
         {"pocket1", "POCKET1"},
         {"pocket2", "POCKET2"},
         {"suitstorage", "SUITSTORAGE"},
+    // WL-Changes-Under-start: Litogin
+        {"undershirts", "UNDERSHIRTS"},
+        {"underwear", "UNDERWEAR"},
+        {"socks", "SOCKS"},
+    // WL-Changes-Under-end: Litogin
     };
 
     [Dependency] private readonly IResourceCache _cache = default!;
