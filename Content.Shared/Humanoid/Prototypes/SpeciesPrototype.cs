@@ -160,6 +160,9 @@ public sealed partial class SpeciesPrototype : IPrototype
     /// </summary>
     [DataField("maxHeight")]
     public int MaxHeight = 200;
+
+    [DataField]
+    public int MaxItemHeight = 140;
     // WL-Height-End
 
     /// <summary>

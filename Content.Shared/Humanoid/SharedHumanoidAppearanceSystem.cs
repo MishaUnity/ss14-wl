@@ -565,11 +565,8 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     // WL-Height-Start
     public void ApplyHeight(HumanoidAppearanceComponent humanoid)
     {
-        if (!_proto.TryIndex(humanoid.Species, out var speciesProto))
-            return;
-
         EnsureComp<ScaleVisualsComponent>(humanoid.Owner);
-        var scale = MinHeightScale + (humanoid.Height - speciesProto.MinHeight) * (MaxHeightScale - MinHeightScale) / (speciesProto.MaxHeight - speciesProto.MinHeight);
+        var scale = MinHeightScale + (humanoid.Height - 130) * (MaxHeightScale - MinHeightScale) / (200 - 130);
         _appearance.SetData(humanoid.Owner, ScaleVisuals.Scale, new Vector2(scale));
     }
     // WL-Height-End
