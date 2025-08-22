@@ -13,9 +13,12 @@ namespace Content.Server._WL.AddHeightItem
         {
             base.Initialize();
 
-            SubscribeLocalEvent<AddHeightItemComponent, ComponentInit>(OnComp);
+            SubscribeLocalEvent<AddHeightItemComponent, ComponentInit>(OnADHI);
         }
-        private void OnComp(EntityUid uid, AddHeightItemComponent com, ComponentInit args)
+        /// <summary>
+        /// Add item component depending on height
+        /// </summary>
+        private void OnADHI(EntityUid uid, AddHeightItemComponent com, ComponentInit args)
         {
             if (!TryComp<HumanoidAppearanceComponent>(uid, out var humanoid))
                 return;

@@ -13,6 +13,10 @@
   femaleFirstNames: NamesTajaranFirstFemale
   maleLastNames: NamesTajaranLast # Corvax-LastnameGender
   femaleLastNames: NamesTajaranLast # Corvax-LastnameGender
+  # WL-Change-start
+  maxHeight: 180
+  minHeight: 140
+  # WL-Change-end
 
 - type: speciesBaseSprites
   id: MobTajaranSprites

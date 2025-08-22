@@ -13,6 +13,10 @@
   femaleFirstNames: NamesIpcFirstFemale
   maleLastNames: NamesIpcLast # Corvax-LastnameGender
   femaleLastNames: NamesIpcLast # Corvax-LastnameGender
+  # WL-Change-start
+  minHeight: 120
+  maxHeight: 230
+  # WL-Change-end
 
 - type: speciesBaseSprites
   id: MobIpcSprites

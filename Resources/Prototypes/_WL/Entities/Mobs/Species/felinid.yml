@@ -25,8 +25,8 @@
       types:
         Blunt: 1
         Slash: 5
-  - type: Thieving
-    stealthy: true
+  # - type: Thieving
+  #   stealthy: true
     stripTimeReduction: 2.5
   - type: Speech
     speechSounds: Alto
@@ -54,6 +54,7 @@
   - type: Icon
     sprite: Mobs/Species/Human/parts.rsi
     state: full
+  - type: AddHeightItem
 
 - type: entity
   save: false
