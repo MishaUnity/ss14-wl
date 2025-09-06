@@ -339,6 +339,7 @@ namespace Content.Server.Database
                 profile.CharacterName,
                 profile.FlavorText,
                 profile.OocText, // WL-OOCText
+                profile.DynamicText, // WL-DynamicText
                 profile.Species,
                 voice, // Corvax-TTS
                 profile.Age,

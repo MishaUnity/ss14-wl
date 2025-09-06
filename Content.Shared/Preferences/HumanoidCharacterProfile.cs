@@ -141,6 +141,7 @@ namespace Content.Shared.Preferences
             string name,
             string flavortext,
             string ooctext, // WL-OOCText
+            string dynamictext, // WL-DynamicText
             string species,
             string voice, // Corvax-TTS
             int age,
@@ -171,6 +172,7 @@ namespace Content.Shared.Preferences
             Name = name;
             FlavorText = flavortext;
             OocText = ooctext; // WL-OOCText
+            DynamicText = dynamictext; // WL-DynamicText
             Species = species;
             Voice = voice; // Corvax-TTS
             Age = age; // WL-Height
@@ -215,6 +217,7 @@ namespace Content.Shared.Preferences
             : this(other.Name,
                 other.FlavorText,
                 other.OocText, // WL-Heigh
+                other.DynamicText, //WL-Changes
                 other.Species,
                 other.Voice,
                 other.Age,
@@ -329,6 +332,8 @@ namespace Content.Shared.Preferences
         //WL-Changes-start
         [DataField] public string OocText { get; private set; } = ""; // WL-OOCText
 
+        [DataField] public string DynamicText { get; private set; } = ""; // WL-DynamicText
+
         [DataField]
         public string MedicalRecord { get; set; } = string.Empty;
 
@@ -359,6 +364,13 @@ namespace Content.Shared.Preferences
             return new(this) { OocText = oocText };
         }
         // WL-OOCText-End
+
+        // WL-DynamicText-Start
+        public HumanoidCharacterProfile WithDynamicText(string dynamictext)
+        {
+            return new(this) { DynamicText = dynamictext };
+        }
+        // WL-DynamicText-End
 
         // WL-Records-Start
         public HumanoidCharacterProfile WithMedicalRecord(string record)
@@ -605,6 +617,7 @@ namespace Content.Shared.Preferences
             if (Age != other.Age) return false;
             if (Height != other.Height) return false; // WL-Height
             if (OocText != other.OocText) return false; // WL-OocText
+            if (DynamicText != other.DynamicText) return false; // WL-DynamicText
             if (Sex != other.Sex) return false;
             if (FlavorText != other.FlavorText) return false; // WL-Changes
             if (MedicalRecord != other.MedicalRecord) return false; // WL-Records
@@ -713,6 +726,7 @@ namespace Content.Shared.Preferences
 
             var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, Sex, sponsorPrototypes);
             var oocText = OocText.Length > MaxDescLength ? FormattedMessage.RemoveMarkup(OocText)[..MaxDescLength] : FormattedMessage.RemoveMarkup(OocText); // WL-OOCText
+            var dynamictext = DynamicText.Length > MaxDescLength ? FormattedMessage.RemoveMarkup(DynamicText)[..MaxDescLength] : FormattedMessage.RemoveMarkup(DynamicText); // WL-DynamicText
 
             // WL-Records-Start
             var medicalRecord = MedicalRecord.Length > MaxRecordLength
@@ -773,6 +787,7 @@ namespace Content.Shared.Preferences
             Name = name;
             FlavorText = flavortext;
             OocText = oocText; // WL-OOCText
+            DynamicText = dynamictext; // WL-DynamicText
             MedicalRecord = medicalRecord; // WL-Records
             SecurityRecord = securityRecord; // WL-Records
             EmploymentRecord = employmentRecord; // WL-Records
@@ -913,6 +928,7 @@ namespace Content.Shared.Preferences
             hashCode.Add(_jobUnblockings);
             hashCode.Add(Height);
             hashCode.Add(OocText);
+            hashCode.Add(DynamicText);
             hashCode.Add(MedicalRecord);
             hashCode.Add(SecurityRecord);
             hashCode.Add(EmploymentRecord);
