@@ -929,11 +929,6 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text")
                         .HasColumnName("char_name");
 
-                    b.Property<string>("DynamicText")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("dynamic_text");
-
                     b.Property<string>("EmploymentRecord")
                         .IsRequired()
                         .HasColumnType("text")

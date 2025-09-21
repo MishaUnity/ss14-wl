@@ -874,11 +874,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("char_name");
 
-                    b.Property<string>("DynamicText")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("dynamic_text");
-
                     b.Property<string>("EmploymentRecord")
                         .IsRequired()
                         .HasColumnType("TEXT")

@@ -1,4 +1,4 @@
-using System.Linq;
+using Content.Client._WL.DynamicText;
 using Content.Client.CharacterInfo;
 using Content.Client.Gameplay;
 using Content.Client.Stylesheets;
@@ -19,6 +19,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using System.Linq;
 using static Content.Client.CharacterInfo.CharacterInfoSystem;
 using static Robust.Client.UserInterface.Controls.BaseButton;
 
@@ -30,6 +31,8 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
     [Dependency] private readonly IEntityManager _ent = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+
+    [Dependency] private readonly DynamicTextUIController _dynamicText = default!;
 
     [UISystemDependency] private readonly CharacterInfoSystem _characterInfo = default!;
     [UISystemDependency] private readonly SpriteSystem _sprite = default!;
@@ -140,6 +143,11 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
         _window.SubText.Text = job;
         _window.Objectives.RemoveAllChildren();
         _window.ObjectivesLabel.Visible = objectives.Any();
+
+        _window.DynamicTextButton.OnPressed += _ =>
+        {
+            _dynamicText.OpenWindow();
+        };
 
         foreach (var (groupId, conditions) in objectives)
         {
