@@ -10,10 +10,11 @@
         <BoxContainer Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True">
             <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" HorizontalAlignment="Center">
                 <Label Text="{Loc 'intercom-channel-label'}"  HorizontalAlignment="Center"/>
-                <OptionButton Name="ChannelOptions" VerticalExpand="True" MinWidth="125"/>
+                <OptionButton Name="MetamorphOptions" VerticalExpand="True" MinWidth="125"/>
             </BoxContainer>
         </BoxContainer>
         <Control MinHeight="10"/>
+        <!--
         <BoxContainer Orientation="Horizontal" HorizontalExpand="True" HorizontalAlignment="Right" Margin="5 0 5 5">
             <Button Name="MicButton" ToggleMode="True" Text="{Loc 'intercom-button-text-mic'}" StyleClasses="OpenRight" MinWidth="70"/>
             <Button Name="SpeakerButton" ToggleMode="True" Text="{Loc 'intercom-button-text-speaker'}" StyleClasses="OpenLeft" MinWidth="70"/>
@@ -26,6 +27,6 @@
                 <TextureRect StyleClasses="NTLogoDark" Stretch="KeepAspectCentered"
                              VerticalAlignment="Center" HorizontalAlignment="Right" SetSize="19 19"/>
             </BoxContainer>
-        </BoxContainer>
+        </BoxContainer>-->
     </BoxContainer>
 </controls:FancyWindow>
