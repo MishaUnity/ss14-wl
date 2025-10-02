@@ -61,6 +61,10 @@
     enabled: true
     radius: 10
   - type: Appearance
+  # Corvax-WL-Changes-start
+  - type: RadarMarker
+    size: 7
+  # Corvax-WL-Changes-end
   - type: GuideHelp # Always strive to be helpful in trying times.
     guides:
     - SingularityEngine
