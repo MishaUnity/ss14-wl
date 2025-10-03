@@ -1,5 +1,5 @@
 using System.Numerics;
-using Content.Shared._WL.Shuttles; //WL-Changes
+using Content.Shared._WL.Shuttles; //WL-Changes : Radar Markers
 using Content.Shared.Shuttles.BUIStates;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.Systems;
@@ -41,7 +41,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
 
     public bool ShowIFF { get; set; } = true;
     public bool ShowDocks { get; set; } = true;
-    public bool ShowMarkers { get; set; } = true; //WL-Changes
+    public bool ShowMarkers { get; set; } = true; //WL-Changes : Radar Markers
     public bool RotateWithEntity { get; set; } = true;
 
     /// <summary>
