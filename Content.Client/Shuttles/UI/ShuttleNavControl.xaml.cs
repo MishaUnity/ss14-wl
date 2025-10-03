@@ -292,7 +292,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
             }
         }
 
-        // WL-Changes-start
+        // WL-Changes-start : Radar Markers
         if (ShowMarkers)
         {
             var markers = EntManager.EntityQueryEnumerator<RadarMarkerComponent>();
@@ -308,7 +308,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
                 handle.DrawCircle(p, marker.Size * MinimapScale, marker.Color.WithAlpha(255), filled: false);
             }
         }
-        // WL-Changes-end
+        // WL-Changes-end : Radar Markers
     }
 
     private void DrawDocks(DrawingHandleScreen handle, EntityUid uid, Matrix3x2 gridToView)
