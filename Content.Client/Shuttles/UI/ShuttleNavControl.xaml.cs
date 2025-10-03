@@ -1,5 +1,5 @@
 using System.Numerics;
-using Content.Shared._WL.Shuttles; //Corvax-WL-Changes
+using Content.Shared._WL.Shuttles; //WL-Changes
 using Content.Shared.Shuttles.BUIStates;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.Systems;
@@ -41,7 +41,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
 
     public bool ShowIFF { get; set; } = true;
     public bool ShowDocks { get; set; } = true;
-    public bool ShowMarkers { get; set; } = true; //Corvax-WL-Changes
+    public bool ShowMarkers { get; set; } = true; //WL-Changes
     public bool RotateWithEntity { get; set; } = true;
 
     /// <summary>
@@ -292,7 +292,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
             }
         }
 
-        // Corvax-WL-Changes-start
+        // WL-Changes-start
         if (ShowMarkers)
         {
             var markers = EntManager.EntityQueryEnumerator<RadarMarkerComponent>();
@@ -308,7 +308,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
                 handle.DrawCircle(p, marker.Size * MinimapScale, marker.Color.WithAlpha(255), filled: false);
             }
         }
-        // Corvax-WL-Changes-end
+        // WL-Changes-end
     }
 
     private void DrawDocks(DrawingHandleScreen handle, EntityUid uid, Matrix3x2 gridToView)
