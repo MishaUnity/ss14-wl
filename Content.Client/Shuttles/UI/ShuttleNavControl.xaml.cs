@@ -1,5 +1,5 @@
 using System.Numerics;
-using Content.Shared._WL.Shuttles;
+using Content.Shared._WL.Shuttles; //Corvax-WL-Changes
 using Content.Shared.Shuttles.BUIStates;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.Systems;
@@ -299,7 +299,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
 
             while (markers.MoveNext(out var uid, out var marker))
             {
-                if (marker == null)
+                if (marker == null || !marker.Visible)
                     continue;
 
                 var p = Vector2.Transform(_transform.GetWorldPosition(uid, xformQuery), worldToShuttle * shuttleToView);
