@@ -1,4 +1,3 @@
-using Content.Shared._WL.Shuttles;
 using Robust.Shared.Map;
 using Robust.Shared.Serialization;
 
