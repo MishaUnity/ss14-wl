@@ -449,7 +449,7 @@ public sealed class WoundableSystem : EntitySystem
             Dirty(ent.Owner, wound);
 
             if (wound.Damage.Empty)
-                PredictedQueueDel(ent);
+                PredictedQueueDel(ent.Owner);
 
             var changeBy = damage - remainder.ToSpecifier();
             changeBy.TrimZeros();
