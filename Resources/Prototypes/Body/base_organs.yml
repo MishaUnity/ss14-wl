@@ -57,6 +57,7 @@
       - UndergarmentTop
       - UndergarmentBottom
       - Special
+      - Body #WL-Changes
 
 - type: entity
   parent: OrganBase
@@ -71,7 +72,7 @@
   - type: VisualOrgan
     layer: enum.HumanoidVisualLayers.Head
     data:
-      state: head
+      state: head 
   - type: VisualOrganMarkings
     hideableLayers:
     - enum.HumanoidVisualLayers.Hair

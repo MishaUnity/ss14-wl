@@ -8,3 +8,17 @@
     useDelay: 1
     icon: { sprite: _WL/Interface/Actions/android.rsi, state: light-off }
     iconOn: { sprite: _WL/Interface/Actions/android.rsi, state: light-on }
+
+- type: entity
+  parent: BaseMentalAction
+  id: ActionAndroidPlayMidi
+  name: Play MIDI
+  description: Open your built-in MIDI player.
+  components:
+  - type: Action
+    useDelay: 1
+    icon: { sprite: _WL/Interface/Actions/android.rsi, state: music }
+    itemIconStyle: NoItem
+  - type: InstantAction
+    event: !type:OpenUiActionEvent
+      key: enum.InstrumentUiKey.Key

@@ -140,17 +140,20 @@ namespace Content.Server._WL.Android
                 return;
 
             if (!_visualBody.TryGatherMarkingsData(uid,
-                [HumanoidVisualLayers.Overlay],
+                [HumanoidVisualLayers.Body],
                 out var organData,
                 out _,
-                out var applied)
-                    || applied.Count == 0)
+                out var applied))
                 return;
 
-            if (!organData.TryGetValue("Eyes", out var marking))
+            if (!applied.TryGetValue("Torso", out var torsoApplied))
                 return;
 
-            var ledColor = marking.EyeColor.WithAlpha(255);
+            if (!torsoApplied.TryGetValue(HumanoidVisualLayers.Body, out var markings) ||
+                markings.Count == 0)
+                return;
+
+            var ledColor = markings[0].MarkingColors[0].WithAlpha(255);
             _pointLight.SetColor(lightEntity, ledColor);
         }
         #endregion Light

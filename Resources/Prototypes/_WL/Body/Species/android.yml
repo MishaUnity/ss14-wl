@@ -57,10 +57,10 @@
     enum.HumanoidVisualLayers.Chest:
       limit: 1
       required: false
-    enum.HumanoidVisualLayers.Overlay:
+    enum.HumanoidVisualLayers.Body:
       limit: 1
-      required: true
-      default: [ AndroidSensors ]
+      required: false
+      nudityDefault: [ AndroidSensors ]
 
 - type: entity
   parent: BaseSpeciesAppearance
@@ -295,7 +295,8 @@
     interactSuccessSound:
       path: /Audio/Ambience/Objects/periodic_beep.ogg
   - type: ItemToggle
-    activated: true
+    onActivate: false
+    activated: false
     onUse: false
   - type: ContainerContainer
     containers:
@@ -341,7 +342,7 @@
   - type: MobStateActions
     actions:
       Alive:
-        - ActionPAIPlayMidi
+        - ActionAndroidPlayMidi
   - type: Actions
   - type: MobCollision # WL-Changes: MobCollision works for players only
   - type: OfferItem # CorvaxGoob-Offer
@@ -480,7 +481,6 @@
 - type: entity
   parent: [ OrganBaseKidneys, OrganAndroidInternal, OrganAndroidMetabolizer ]
   id: OrganAndroidKidneys
-
 
 - type: entity
   id: AndroidLightMarker
